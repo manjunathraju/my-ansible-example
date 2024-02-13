@@ -1,0 +1,17 @@
+---
+- name: APACHE INSTALLATION 
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  tasks:
+    - name: apache INSTALLATION
+      apt:
+        name: apache2
+        state: present
+
+    - name: start apache service
+      service: 
+        name: apache2
+        state: started
+        enabled: yes
